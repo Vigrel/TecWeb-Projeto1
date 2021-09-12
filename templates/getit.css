@@ -236,6 +236,9 @@ body {
   transform: rotate(0deg);
 }
 
-
-
-
+.delete{
+  border: none; 
+  color: red;
+  cursor: pointer;
+  background: transparent;
+}
