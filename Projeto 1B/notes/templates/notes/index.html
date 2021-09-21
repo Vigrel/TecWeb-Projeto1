@@ -1,0 +1,30 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+    <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+    <p  class="subtitle" >Como o Post-it, mas com outro verbo</p>
+</div>
+
+<main class="container">
+
+    <form method="post" type="hidden" class="form-card">
+        {% csrf_token %}
+        <input id="titulo" type="text" name="titulo"  class="form-card-title" placeholder="Título"/>
+        <textarea id="detalhes" name="detalhes" class="autoresize" placeholder="Digite o conteúdo..."></textarea>
+        <button class="btn" type="submit">Criar</button>
+    </form>
+    
+    <ul class="card-container">
+        {% for note in notes %}
+        <div class="card">
+            <li class="card-title">{{ note.title }}</li>
+            <li >{{ note.content }}</li>
+        </div>
+        {% endfor %}
+    </ul>
+    <script type="text/javascript" src="{% static 'notes/script/getit.js' %}"></script>
+</main>
+    
+{% endblock %}
