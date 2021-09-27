@@ -78,23 +78,80 @@ Algumas informações úteis e dicas:
    outline: none;
    border-radius: 5px;
    box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.6);
- }
- 
- .form-card-title{
-   border-width: 0;
-   font-size: 1.2rem;
-   font-family: 'Roboto', sans-serif;
- }
- 
- .autoresize{
-   text-align: justify;
-   height: 20px;
-   width: 100%;
-   margin: 15px 0 10px 0;
-   border-width: 0;
-   font-family: 'Roboto', sans-serif;
-   resize: none;
- }
+  }
+  
+  .form-card-title{
+    border-width: 0;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .autoresize{
+    text-align: justify;
+    height: 20px;
+    width: 100%;
+    margin: 15px 0 10px 0;
+    border-width: 0;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+  }
+  
+  .card-container {
+    width: "100%";
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 0 2.5rem 0 2.5rem ;
+    justify-content: space-evenly;
+  }
+  
+  .card {
+    height: 9rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    border-width: 0;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.6);
+    margin: 2rem 0.25rem 2rem 0.25rem ;
+    font-family: 'Permanent Marker', cursive;
+    
+  }
+  
+  .card-top{
+    display: flex;
+   justify-content: space-between;
+  }
+
+  .card-title {
+    font-weight: bold;
+    padding: 0.5rem;
+  }
+
+  .card-content {
+    align-self: center;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    color: #4c4c4c;
+    margin: auto
+    
+  }
+
+  .delete {
+    background-color: transparent;
+    color: red;
+    border-width: 0rem;
+    cursor: pointer;
+  }
+  
+  .put-icon {
+    background-color: transparent;
+    color: blue;
+    border-width: 0rem;
+    cursor: pointer;
+  }
+
  .btn {
    font-family: 'Roboto', sans-serif;
    
@@ -147,45 +204,6 @@ Algumas informações úteis e dicas:
    transition: width 0.2s ease-out, padding-top 0.2s ease-out;
  }
  
- .card-container {
-   width: "100%";
-   margin-top: 1rem;
-   flex-wrap: wrap;
-   display: flex;
-   margin: 0 2.5rem 0 2.5rem ;
-   justify-content: space-evenly;
- }
- 
- .card {
-   height: 9rem;
-   width: 15rem;
-   display: flex;
-   flex-direction: column;
-   border-width: 0;
-   outline: none;
-   border-radius: 5px;
-   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.6);
-   margin: 2rem 0.25rem 2rem 0.25rem ;
-   font-family: 'Permanent Marker', cursive;
-   
- }
- 
- .card-title {
-   font-weight: bold;
-   padding: 0.5rem;
-   /* margin-bottom: "25%"; */
- }
- 
- .card-content {
-   
-   align-self: center;
-   justify-content: flex-end;
-   padding: 0.5rem;
-   color: #4c4c4c;
-   margin: auto
-   
- }
- 
  .card-color-1 {
    background-color: #ead3a7;
  }
@@ -234,5 +252,76 @@ Algumas informações úteis e dicas:
  }
  .card-rotation-11{
    transform: rotate(0deg);
- }
- 
+  }
+
+
+  /* Code from https://www.w3schools.com/howto/howto_css_modals.asp*/
+  /* The Modal (background) */
+  .modal {
+  padding: 1rem;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4;
+}
+
+.btn-put{
+  padding-left: 40%;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
