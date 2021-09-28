@@ -9,14 +9,19 @@
         {% csrf_token %}
         <input id="titulo" type="text" name="titulo" class="form-card-title" placeholder="Título" />
         <textarea id="detalhes" name="detalhes" class="autoresize" placeholder="Digite o conteúdo..."></textarea>
+        <textarea name="tag" class="autoresize" placeholder="Digite a tag"></textarea>
         <button class="btn" type="submit">Criar</button>
     </form>
+    <div class="tags">
+        <button class="btn"><a href="/tags">tags</a></button>
+    </div>
 
     <ul class="card-container">
         {% for note in notes %}
         <div class="card">
             <div class="card-top">
-                <button class="put-icon" value="{{ note.title }}&{{ note.content }}&{{ note.id }}"><i class="material-icons">note</i></button>
+                <button class="put-icon" value="{{ note.title }}&{{ note.content }}&{{ note.id }}&{{ note.tag }}"><i
+                        class="material-icons">note</i></button>
 
                 <form method="post" action="/delete">
                     {% csrf_token %}
@@ -44,10 +49,12 @@
             </div>
             <div class="modal-body">
                 <input id="note-title" type="text" name="titulo" class="form-card-title" placeholder="Título" />
-                <textarea id="note-content" name="detalhes" class="autoresize" placeholder="Digite o conteúdo..."></textarea>
+                <textarea id="note-content" name="detalhes" class="autoresize"
+                    placeholder="Digite o conteúdo..."></textarea>
+                <textarea id="note-tag" name="tag" class="autoresize" placeholder="Digite a tag"></textarea>
             </div>
             <div class="btn-put">
-                <form action="/put" >
+                <form action="/put">
                     {% csrf_token %}
                     <button id="note-put" class="btn" type="submit" name="put">Criar</button>
                 </form>

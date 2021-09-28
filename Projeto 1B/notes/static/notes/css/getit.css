@@ -152,6 +152,20 @@ Algumas informações úteis e dicas:
     cursor: pointer;
   }
 
+  .tags{
+    align-self: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+
+  .notes-wanted{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+  }
+
  .btn {
    font-family: 'Roboto', sans-serif;
    

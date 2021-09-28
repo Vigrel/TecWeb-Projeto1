@@ -42,17 +42,19 @@ var span = document.getElementsByClassName("close");
 var noteId = "";
 var modalTitle = document.getElementById("note-title");
 var modalContent = document.getElementById("note-content");
+var modalTag = document.getElementById("note-tag");
 var modalUpdateButton = document.getElementById("note-put");
 
 // When the user clicks on the button, open the modal
 for (let btn of btns) {
   btn.onclick = () => {
-    let [title, content, id] = btn.value.split("&");
+    let [title, content, id, tag] = btn.value.split("&");
 
     modal.style.display = "block";
     modalTitle.innerHTML = title;
     modalContent.innerHTML = content;
     noteId = id;
+    modalTag.innerHTML = tag;
   }
 }
 
@@ -64,5 +66,5 @@ for (let spa of span) {
 }
 
 modalUpdateButton.onclick = () => {
-  modalUpdateButton.setAttribute("value", `id=${noteId}&title=${modalTitle.value}&content=${modalContent.value}`);
+  modalUpdateButton.setAttribute("value", `id=${noteId}&title=${modalTitle.value}&content=${modalContent.value}&tag=${modalTag.value}`);
 }
