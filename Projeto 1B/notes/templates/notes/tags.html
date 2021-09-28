@@ -1,0 +1,20 @@
+{% extends "notes/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'notes/css/getit.css' %}" />
+
+<main class="container">
+    <div class="tags">
+        <button class="btn"><a href="/">return</a></button>
+    </div>
+    <ul class="card-container">
+        {% for tag in tags %}
+        <button class="btn"><a href="/tag?tag={{ tag.tag }}">{{tag.tag}}</a></button>
+        {% endfor %}
+    </ul>
+
+</main>
+<script type="text/javascript" src="{% static 'notes/script/getit.js' %}"></script>
+
+{% endblock %}
