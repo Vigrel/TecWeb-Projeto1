@@ -30,3 +30,6 @@ def index(req):
     notes = '\n'.join(notes_li)
 
     return load_template('index.html').format(notes=notes).encode()
+
+def not_getit():
+    return load_template('Get-it.html').encode()
