@@ -31,5 +31,5 @@ def index(req):
 
     return load_template('index.html').format(notes=notes).encode()
 
-def not_getit():
+def tech_web():
     return load_template('Get-it.html').encode()

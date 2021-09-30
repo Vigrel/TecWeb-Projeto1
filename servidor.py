@@ -1,7 +1,7 @@
 import socket
 from pathlib import Path
 from utils import extract_route, read_file
-from views import index, not_getit
+from views import index, tech_web
 
 CUR_DIR = Path(__file__).parent
 SERVER_HOST = 'localhost'
@@ -25,8 +25,10 @@ while True:
         response = read_file(filepath)
     elif route == '':
         response = index(request)
+    elif route == 'tecweb':
+        response = tech_web()
     else:
-        response = not_getit()
+        response = bytes()
 
     client_connection.sendall('HTTP/1.1 200 OK\n\n'.encode() + response)
 
