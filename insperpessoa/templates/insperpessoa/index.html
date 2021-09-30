@@ -1,0 +1,28 @@
+{% extends "insperpessoa/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'insperpessoa/css/getit.css' %}" />
+
+<main class="container">
+    <form method="post" type="hidden" class="form-card">
+        {% csrf_token %}
+        <input id="nome" type="text" name="nome" class="form-card-title" placeholder="Nome" />
+        <input id="sobrenome" name="sobrenome" class="form-card-title" placeholder="Sobrenome"></input>
+        <button class="btn" type="submit">Criar</button>
+    </form>
+    <div class='cadastrados'>
+        Quantiade Total de Pessoas Cadastradas: {{pessoas.1}}
+    </div>
+    <ul class="card-container">
+        {% for pessoa in pessoas.0 %}
+        <div class="card">
+            {{ pessoa.nome }} {{ pessoa.sobrenome}}
+        </div>
+        {% endfor %}
+    </ul>
+
+</main>
+<script type="text/javascript" src="{% static 'insperpessoa/script/getit.js' %}"></script>
+
+{% endblock %}
